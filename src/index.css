@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
+:root {
+  --color-lightest: #ffe8cc;
+  --color-light: #f9d5aa;
+  --color-medium: #ffa94d;
+  --color-dark: #ff923b;
+  --color-darkest: #d96505;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  height: 100vh;
+  color: #495057;
+  display: flex;
+  align-items: end;
+  padding-bottom: 4rem;
+  justify-content: center;
+  background-image: url("../public/bgimg.avif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.logoimg {
+  width: 65px; /* Adjust width as needed */
+  height: 65px; /* Adjust height as needed */
+  position: relative;
+  left: 5px;
+  bottom: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.heading {
+  background-color: #f8c840;
+  position: absolute;
+  font-family: "borel", cursive;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2.5rem 4rem 0;
+  font-size: 3rem;
+  border: var(--color-dark) 4px ridge;
+  border-radius: 38px;
+  width: fit-content;
+}
+
+.app {
+  background-color: var(--color-lightest);
+  min-height: 66vh;
+  display: grid;
+  grid-template-columns: 40rem 44rem;
+  column-gap: 0.5rem;
+  align-items: center;
+  border: #343a40 1px solid;
+  border-radius: 15px;
+  padding: 1rem 2rem 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 1.5);
+  z-index: 1;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  grid-column: 1 / span 2;
+  margin: auto;
+  font-size: large;
+}
+
+.empty span {
+  font-family: "borel", cursive;
+}
+
+.button {
+  background-color: var(--color-medium);
+  color: #343a40;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: var(--color-dark);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background-color: var(--color-darkest);
+}
+
+.sidebar {
+  width: 348px;
+}
+
+.sidebar ul {
+  list-style: none;
+  max-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  overflow-y: auto;
+}
+
+.sidebar li {
+  display: grid;
+  grid-template-columns: 4.8rem 1fr auto;
+  align-items: center;
+  column-gap: 1.6rem;
+
+  padding: 1.2rem;
+  border-radius: 7px;
+  transition: 0.5s;
+}
+
+.selected,
+.sidebar li:hover {
+  background-color: var(--color-light);
+}
+
+.sidebar li img {
+  border-radius: 50%;
+  width: 100%;
+  grid-row: span 2;
+}
+
+.sidebar li h3 {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.sidebar li p {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.sidebar li .button {
+  grid-row: span 2;
+  grid-column: 3;
+}
+
+.sidebar > .button {
+  float: right;
+  margin-right: 1.2rem;
+}
+
+.green {
+  color: #66a80f;
+}
+
+.red {
+  color: #e03131;
+}
+
+form {
+  font-size: 1.6rem;
+  display: grid;
+  align-items: center;
+  gap: 1.2rem;
+
+  background-color: var(--color-light);
+  border-radius: 7px;
+}
+
+.form-add-friend {
+  grid-template-columns: 1fr 1.5fr;
+  margin-bottom: 1.6rem;
+  padding: 1.2rem;
+}
+.splitting-message {
+  font-family: "borel", cursive;
+  font-size: xx-large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+.form-split-bill {
+  grid-template-columns: 1fr 12rem;
+  padding: 3.2rem 4rem;
+  border-radius: inherit;
+}
+
+label {
+  font-weight: 500;
+}
+
+label::first-letter {
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 1.8rem;
+}
+
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.5rem;
+  padding: 0.7rem;
+  text-align: center;
+  border: 1px solid var(--color-light);
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border: 1px solid var(--color-dark);
+}
+
+form .button {
+  margin-top: 0.6rem;
+  grid-column: 2;
+}
+
+form h2 {
+  grid-column: 1 / -1;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.6rem;
+}
